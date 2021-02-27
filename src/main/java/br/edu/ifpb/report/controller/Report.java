@@ -1,13 +1,13 @@
 package br.edu.ifpb.report.controller;
 
-import br.edu.ifpb.report.database.DatabseConnector;
+import br.edu.ifpb.report.database.DatabaseConnector;
 import br.edu.ifpb.report.database.MysqlDatabaseConnector;
 import br.edu.ifpb.report.database.PostgreSQLDatabaseConnector;
 
 public abstract class Report {
 
-    DatabseConnector connectorMySQL = new MysqlDatabaseConnector();
-    DatabseConnector connectorPostgres = new PostgreSQLDatabaseConnector();
+    DatabaseConnector connectorMySQL = new MysqlDatabaseConnector();
+    DatabaseConnector connectorPostgres = new PostgreSQLDatabaseConnector();
 
     public void generate() {
         this.createDatabaseConnection();
