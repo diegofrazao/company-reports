@@ -6,17 +6,16 @@ import br.edu.ifpb.report.database.PostgreSQLDatabaseConnector;
 
 public abstract class Report {
 
-    DatabaseConnector connectorMySQL = new MysqlDatabaseConnector();
-    DatabaseConnector connectorPostgres = new PostgreSQLDatabaseConnector();
+    abstract protected DatabaseConnector createConnector();
 
     public void generate() {
         this.createDatabaseConnection();
-        this.executeQuery();
+        this.makeQuery();
         this.convertToFile();
     }
 
     abstract public void createDatabaseConnection();
-    abstract public void executeQuery();
+    abstract public void makeQuery();
     abstract public void convertToFile();
 
 }
